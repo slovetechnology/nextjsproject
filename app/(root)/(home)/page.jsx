@@ -15,7 +15,7 @@ async function fetchProducts({ params }) {
 const page = async ({ searchParams }) => {
   const { data } = await fetchProducts({ params: searchParams.query })
   return (
-    <main className='flex-center paddings max-auto w-full max-w-screen-2xl flex-col'>
+    <main className='flex-center paddings max-auto w-full max-w-screen-3xl flex-col'>
       <section className="nav-padding w-full">
         <div className="flex-center relative min-h-[274px] w-full flex-col rounded-xl bg-banner bg-center text-center bg-no-repeat">
           <h1 className='sm:heading1 heading2 mb-6 text-center text-white'>NextJS 13 Mastery Resources</h1>
@@ -28,7 +28,7 @@ const page = async ({ searchParams }) => {
           <Header data={data.packages}
             query={searchParams.query}
           />
-          {data.packages.length > 0 && <div className="w-full border rounded-lg grid gap-6 grid-cols-1 md:grid-cols-4 lg:grid-cols-5 p-3">
+          {data.packages.length > 0 && <div className="w-full border rounded-lg grid gap-6 grid-cols-2 md:grid-cols-4 lg:grid-cols-5 p-3">
             {data.packages.map((item, i) => (
               <SingleProduct key={i} data={item} />
             ))}
